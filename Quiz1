@@ -1,0 +1,25 @@
+Question 5
+Suppose that we have created a machine learning algorithm that predicts whether a link 
+will be clicked with 99% sensitivity and 99% specificity. The rate the link is clicked 
+is 1/1000 of visits to a website. If we predict the link will be clicked on a specific 
+visit, what is the probability it will actually be clicked?
+
+sol.
+      predict\real     +         -
+           +          TP        FP
+           -          FN        TN
+TP:true positive
+FP:false positive
+TN:true negatice
+FN:false negative
+
+99% sensitivity and 99% specificity
+=> 0.99 = TP/(TP+FN)
+   0.99 = TN/(FP+TN)
+
+The rate the link is clicked is 1/1000 of visits to a website
+=> TP + FN = 0.001, FP + TN = 1 - (TP + FN) = 0.999
+=> TP = 0.99*0.001, FN = 0.01*0.001, TN = 0.999*0.99, FP = 0.999*0.01
+
+What is the probability it will actually be clicked?
+=> probability it will actually be clicked = TP/(TP+FP) = 11/122
